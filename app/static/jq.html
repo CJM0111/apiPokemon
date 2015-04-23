@@ -1,0 +1,43 @@
+<html>
+<head>
+
+<!--link rel="stylesheet" type="text/css" href="styles.css"-->
+
+<script src="jquery-2.1.3.min.js"></script>
+<script type="text/javascript">
+            $(document).ready(function(){
+                $("#button1").click(function(){
+                    $("#data").load("http://localhost:5000/states");
+                });
+
+                $("#button2").click(function(){
+                    $.getJSON("http://localhost:5000/states")
+                    .done(function(data){
+                        $.each(data.states, function(i, state) {
+                            $("<li>").text(state['name']).appendTo("#data2");
+                        })
+                    })
+                });
+
+                /*
+                $("#reset").click(function(){
+                    $("#data").val("");
+                    $("#data2").val("");
+                });
+                */
+
+            });
+</script>
+</head>
+<body>
+<div id="getter">
+<button type="button1" id="button1"> GET1 </button>
+<button type="button2" id="button2"> GET2 </button>
+<button type="button" id="reset"> RESET </button>
+</div>
+<div id="data" id="data">
+</div>
+<div id="data2" id="data2">
+</div>
+</body>
+</html>
