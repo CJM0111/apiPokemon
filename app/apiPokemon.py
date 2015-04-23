@@ -1,5 +1,5 @@
 # Author: Chris McDonald
-# Pokemon Web API
+# Pokemon Web API Python/Flask
 
 #!/usr/bin/env python
 
